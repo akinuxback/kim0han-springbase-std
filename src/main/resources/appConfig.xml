@@ -9,7 +9,7 @@
 
     <bean id="memberRepository" class="hello.aki.member.MemoryMemberRepository"/>
 
-    <bean id="orderService" class="hello.aki.order.OrderServiceImple">
+    <bean id="orderService" class="hello.aki.order.OrderServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
         <constructor-arg name="discountPolicy" ref="discountPolicy"/>
     </bean>

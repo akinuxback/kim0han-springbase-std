@@ -3,7 +3,7 @@ package hello.aki.singleton;
 import hello.aki.AppConfig;
 import hello.aki.member.MemberRepository;
 import hello.aki.member.MemberServiceImpl;
-import hello.aki.order.OrderServiceImple;
+import hello.aki.order.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -22,7 +22,7 @@ public class ConfigurationSingletonTest {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
-        OrderServiceImple orderService = ac.getBean("orderService", OrderServiceImple.class);
+        OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
         MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);
 
         MemberRepository memberRepository1 = memberService.getMemberRepository();

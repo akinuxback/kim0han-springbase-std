@@ -2,7 +2,9 @@ package hello.aki.discount;
 
 import hello.aki.member.Grade;
 import hello.aki.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FixDiscountPolicy implements DiscountPolicy {
 
     private int discountFixAmount = 1000;

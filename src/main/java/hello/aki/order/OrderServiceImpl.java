@@ -1,16 +1,20 @@
 package hello.aki.order;
 
+import hello.aki.annotation.MainDiscountPolicy;
 import hello.aki.discount.DiscountPolicy;
 import hello.aki.member.Member;
 import hello.aki.member.MemberRepository;
-import hello.aki.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-public class OrderServiceImple implements OrderService{
+@Component
+public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImple(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy  DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
